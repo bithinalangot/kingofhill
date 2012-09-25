@@ -1,0 +1,31 @@
+{% extends "static/base.html" %}
+
+{% block title %}Welcome to InCTF Contest Portal{% endblock %}
+
+{% block script %}
+<link rel="stylesheet" href="redandblack.css" type="text/css">
+{% endblock %}
+
+{% block body %}
+<h2>King</h2>
+{% if king %}
+<h3>{{ king.teamname }}</h3>
+{% endif %}
+
+<hr />
+
+<h3>Service status</h3>
+<table>
+<th>Service</th><th>Team</th><th>Duration</th>
+{% for s in status %}
+    <tr>
+    {% for t in s %}
+       <td>{{ t }}</td>
+    {% endfor %}
+    </tr>
+{% endfor %}
+
+</table>
+
+{% endblock %}
+
